@@ -79,8 +79,11 @@ const useStyles = createStyles((theme) => ({
   //   },
 }));
 
-export default function InputCard({ title, I1Label }) {
+export default function InputCard() {
+  //{ title, I1Label }
   const { classes, cx } = useStyles();
+  const title = 'Direct Discount';
+  const I1Label = 'discount';
 
   return (
     <Box>

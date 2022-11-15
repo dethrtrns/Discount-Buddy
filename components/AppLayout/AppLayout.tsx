@@ -33,7 +33,7 @@ export function AppLayout() {
       })}
     >
       <>
-        <InputCard title="Direct Discount" I1Label="discount" />
+        <InputCard />
       </>
       <ShaCard />
     </AppShell>
