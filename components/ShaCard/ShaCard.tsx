@@ -86,11 +86,7 @@ export default function InputCard() {
     <Box>
       <Card shadow="md" p="lg" radius="md" withBorder>
         <Card.Section withBorder p="sm">
-          <Text
-            variant="gradient"
-            gradient={{ from: 'goldenrod', to: 'indigo', deg: 360 }}
-            weight={500}
-          >
+          <Text color="yellow" weight={500}>
             Cashback Discount
           </Text>
         </Card.Section>
