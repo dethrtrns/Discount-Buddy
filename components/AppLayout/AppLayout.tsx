@@ -1,9 +1,10 @@
-import { AppShell, Navbar, Header, Group, Container, Grid } from '@mantine/core';
+import { AppShell, Box, Navbar, Header, Group, Container, Grid } from '@mantine/core';
 import BrandLogo from '../BrandLogo/BrandLogo';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import InputCard from '../InputCard/InputCard';
-import ShaCard from '../ShaCard/ShaCard';
-import { Welcome } from '../Welcome/Welcome';
+import OutputCard from '../OutputCard/OutputCard';
+import TotalCard from '../TotalCard/TotalCard';
+// import { Welcome } from '../Welcome/Welcome';
 
 export function AppLayout() {
   return (
@@ -32,10 +33,36 @@ export function AppLayout() {
         },
       })}
     >
-      <>
-        <InputCard />
-      </>
-      <ShaCard />
+      <Box
+        sx={{
+          display: 'flex',
+          flexdirection: 'column',
+          // width: '50%',
+        }}
+      >
+        <Group
+          sx={{
+            width: '60vw',
+          }}
+          p="sm"
+        >
+          <InputCard />
+          <InputCard />
+          <OutputCard />
+          <TotalCard />
+        </Group>
+        <Group
+          sx={{
+            // display: 'flex',
+            flexdirection: 'row',
+            width: '40vw',
+          }}
+          p="sm"
+        >
+          <OutputCard />
+          <OutputCard />
+        </Group>
+      </Box>
     </AppShell>
   );
 }

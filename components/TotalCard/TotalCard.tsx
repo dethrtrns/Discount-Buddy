@@ -10,20 +10,7 @@ import {
   Box,
   NumberInput,
 } from '@mantine/core';
-import { IconDiscount2, IconDiscount, IconCurrency } from '@tabler/icons';
-
-// const rotateY = keyframes({
-//   '0%': { transform: 'rotateY(0deg)' },
-//   '75%': { transform: 'rotateY(180deg)' },
-//   '100%': { transform: 'rotateY(360deg)' },
-// });
-
-// const bounce = keyframes({
-//   'from, 20%, 53%, 80%, to': { transform: 'translate3d(0, 0, 0)' },
-//   '40%, 43%': { transform: 'translate3d(0, -30px, 0)' },
-//   '70%': { transform: 'translate3d(0, -15px, 0)' },
-//   '90%': { transform: 'translate3d(0, -4px, 0)' },
-// });
+import { IconDiscount2, IconDiscount, IconCurrency, IconCurrencyRupee } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
   root: {},
@@ -79,7 +66,7 @@ const useStyles = createStyles((theme) => ({
   //   },
 }));
 
-export default function InputCard() {
+export default function TotalCard() {
   const { classes, cx } = useStyles();
 
   return (
@@ -87,30 +74,19 @@ export default function InputCard() {
       <Card shadow="md" p="lg" radius="md" withBorder>
         <Card.Section withBorder p="sm">
           <Text color="yellow" weight={500}>
-            Cashback Discount
+            Total Amount
           </Text>
         </Card.Section>
 
         <Group position="left" mt="md" mb="xs">
           <NumberInput
-            label="Casback"
-            placeholder="Enter cashback in %"
-            // defaultValue={22}
-            min={0}
-            max={100}
-            icon={<IconDiscount size={18} />}
-          />
-          <NumberInput
-            label="limit"
-            placeholder="Enter max/upto limit here if applicable."
+            label="Bill Amount"
+            placeholder="Enter total bill amount"
             // defaultValue={22}
             min={0}
             // max={100}
-            icon={<IconCurrency size={18} />}
+            icon={<IconCurrencyRupee size={18} />}
           />
-          {/* <Badge color="pink" variant="light">
-            On Sale
-          </Badge> */}
         </Group>
       </Card>
     </Box>

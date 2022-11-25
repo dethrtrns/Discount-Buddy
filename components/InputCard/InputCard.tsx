@@ -3,6 +3,7 @@ import {
   Text,
   createStyles,
   Group,
+  Button,
   UnstyledButton,
   keyframes,
   Card,
@@ -103,6 +104,9 @@ export default function InputCard() {
             max={100}
             icon={<IconDiscount size={18} />}
           />
+          <>
+            <Button>?</Button>
+          </>
           <NumberInput
             label="limit"
             placeholder="Enter max/upto limit here if applicable."
