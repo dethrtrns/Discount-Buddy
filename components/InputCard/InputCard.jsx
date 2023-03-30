@@ -80,11 +80,20 @@ const useStyles = createStyles((theme) => ({
   //   },
 }));
 
-export default function InputCard() {
+export default function InputCard({
+  title = 'pass a title prop idiot!',
+  label1,
+  placeholder1,
+  icon1,
+  icon2,
+  label2,
+  placeholder2,
+  limit,
+}) {
   //{ title, I1Label }
   const { classes, cx } = useStyles();
-  const title = 'Direct Discount';
-  const I1Label = 'discount';
+  // const title = 'Direct Discount';
+  // const I1Label = 'discount';
 
   return (
     <Box>
@@ -97,24 +106,23 @@ export default function InputCard() {
 
         <Group position="left" mt="md" mb="xs">
           <NumberInput
-            label={I1Label}
+            label={label1}
             placeholder="Enter discount in %"
             // defaultValue={22}
             min={0}
             max={100}
-            icon={<IconDiscount size={18} />}
+            icon={icon1}
           />
-          <>
-            <Button>?</Button>
-          </>
-          <NumberInput
-            label="limit"
-            placeholder="Enter max/upto limit here if applicable."
-            // defaultValue={22}
-            min={0}
-            // max={100}
-            icon={<IconCurrency size={18} />}
-          />
+          {limit && (
+            <NumberInput
+              label="limit"
+              placeholder="Enter max/upto limit here if applicable."
+              // defaultValue={22}
+              min={0}
+              // max={100}
+              icon={<IconCurrency size={18} />}
+            />
+          )}
           {/* <Badge color="pink" variant="light">
             On Sale
           </Badge> */}
