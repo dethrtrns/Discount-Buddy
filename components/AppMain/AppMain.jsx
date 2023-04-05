@@ -14,7 +14,7 @@ export default function AppMain() {
   const [optAmt, setOptAmt] = useState(null);
 
   const calculateOptAmt = (disc, discLim) => {
-    if (discLim) setOptAmt(((100 * discLim) / disc).toFixed(2));
+    if (disc && discLim) setOptAmt(((100 * discLim) / disc).toFixed(2));
     else setOptAmt(null);
     // console.log(optAmt);
     return;

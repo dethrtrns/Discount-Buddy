@@ -48,7 +48,7 @@ function OutputCard({ optAmt }) {
     let timeoutId;
     let currentIndex = 0;
     console.log(optAmt);
-    const optAmtString = optAmt?`${optAmt}$`:'Enter limit to see Optimum Amount!';
+    const optAmtString = optAmt?`${optAmt}$`:'Enter discount % and upto limit to see Optimum Amount!';
     console.log(optAmtString);
 
     const updateString = () => {
