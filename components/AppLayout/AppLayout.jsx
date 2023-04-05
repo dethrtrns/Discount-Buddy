@@ -16,7 +16,7 @@ export function AppLayout() {
       // }
       header={
         <Header height={'4.7rem'} p="xs">
-          <Group sx={{ height: '100%' }} position="apart" align="center">
+          <Group sx={{ height: '100%',gap:0 }} position="apart" align="center">
             <BrandLogo />
             <ColorSchemeToggle />
           </Group>
