@@ -8,13 +8,17 @@ import TotalCard from '../TotalCard/TotalCard';
 
 export default function AppMain() {
   //inputs:-
-  const [discount, setDiscount] = useState(null);
-  const [discountLimit, setDiscountLimit] = useState(null);
-  const [cashback, setCashback] = useState(null);
-  const [cashbackLimit, setCashbackLimit] = useState(null);
+
   const [billAmt, setBillAmt] = useState(null);
   //outputs:-
   const [optAmt, setOptAmt] = useState(null);
+
+  const calculateOptAmt = (disc, discLim) => {
+    if (discLim) setOptAmt(((100 * discLim) / disc).toFixed(2));
+    else setOptAmt(null);
+    // console.log(optAmt);
+    return;
+  };
 
   return (
     <Container
@@ -39,12 +43,13 @@ export default function AppMain() {
           icon1={<IconDiscount size={18} />}
           label1="discount"
           limit={true}
+          onChange={calculateOptAmt}
         />
-        <OutputCard />
-        <InputCard title={'Cashback Discount'} label1="discount" limit={true} />
-        <OutputCard />
+        {/* <OutputCard />
+        <InputCard title={'Cashback Discount'} label1="discount" limit={true} /> */}
+        <OutputCard optAmt={optAmt} />
         <TotalCard />
-        <OutputCard />
+        {/* <OutputCard /> */}
       </SimpleGrid>
     </Container>
   );

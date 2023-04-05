@@ -20,7 +20,9 @@
     "**/*.ts",
     "**/*.tsx",
     "components/InputCard/InputCard.jsx",
-    "components/AppLayout/AppLayout.jsx"
+    "components/AppLayout/AppLayout.jsx",
+    "components/TotalCard/TotalCard.jsx",
+    "components/OutputCard/OutputCard.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,1 +1,1 @@
-module.exports = require('eslint-config-mantine/.prettierrc.js');
+export * from "eslint-config-mantine/.prettierrc.js";

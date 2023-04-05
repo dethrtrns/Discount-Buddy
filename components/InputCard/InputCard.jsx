@@ -12,6 +12,7 @@ import {
   NumberInput,
 } from '@mantine/core';
 import { IconDiscount2, IconDiscount, IconCurrency } from '@tabler/icons';
+import { useEffect, useState } from 'react';
 
 // const rotateY = keyframes({
 //   '0%': { transform: 'rotateY(0deg)' },
@@ -89,11 +90,13 @@ export default function InputCard({
   label2,
   placeholder2,
   limit,
+  onChange,
 }) {
   //{ title, I1Label }
+  const [discount, setDiscount] = useState(null);
+  const [discountLimit, setDiscountLimit] = useState(null);
   const { classes, cx } = useStyles();
-  // const title = 'Direct Discount';
-  // const I1Label = 'discount';
+  useEffect(() => onChange(discount, discountLimit), [discount, discountLimit]);
 
   return (
     <Box>
@@ -108,6 +111,10 @@ export default function InputCard({
           <NumberInput
             label={label1}
             placeholder="Enter discount in %"
+            value={discount}
+            onChange={(v) => {
+              setDiscount(v);
+            }}
             // defaultValue={22}
             min={0}
             max={100}
@@ -121,6 +128,10 @@ export default function InputCard({
               min={0}
               // max={100}
               icon={<IconCurrency size={18} />}
+              value={discountLimit}
+              onChange={(v) => {
+                setDiscountLimit(v);
+              }}
             />
           )}
           {/* <Badge color="pink" variant="light">
